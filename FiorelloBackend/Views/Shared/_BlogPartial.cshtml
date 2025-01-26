@@ -1,0 +1,24 @@
+﻿@model IEnumerable<BlogVM>
+
+    @foreach (var item in Model)
+    {
+        <div class="col-md-6 col-lg-4">
+            <a style="text-decoration:none" asp-action="Detail" asp-route-id="@item.Id">
+                <div class="item">
+                    <div class="img position-relative">
+                        <img src="~/img/@item.Image" class="img-fluid" alt="">
+                        <div class="date rounded bg-light position-absolute py-1 px-2">
+                            <span>@item.CreateDate.ToString("MM.dd.yyyy")</span>
+                        </div>
+                    </div>
+                    <div class="text mt-3 text-center px-5">
+                        <h5>@item.Title</h5>
+                        <p class="text-black-50">@item.Description</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+    }
+
+    
+
